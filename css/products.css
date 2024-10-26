@@ -1,0 +1,398 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f4f4f9; /* Light background for modern look */
+  color: #333; /* Darker gray for text */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  padding-top: 50px;
+  width: 200px;
+  background-color: #2c3e50; /* Dark blue/gray for sidebar */
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #bdc3c7; /* Light gray for links */
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #34495e; /* Darken background on hover */
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #ffffff; /* White background for main content area */
+  height: 100vh; /* Fill the viewport height */
+  overflow-y: auto; /* Allow scrolling if content exceeds viewport height */
+}
+
+main {
+  width: 80%;
+  margin: 0;
+  padding: .5em 2em .25em;
+}
+
+/* Form styling */
+form {
+  width: 550px;
+  padding: 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input[type="text"] {
+  width: 75%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#form_button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#form_button:hover {
+  background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white; /* Match the form background */
+  border-radius: 8px; /* Match the form border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Match the form shadow */
+}
+
+table thead {
+  background-color: #fff; /* Table header background */
+  color: #000;
+}
+
+table th, table td {
+  padding: 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  width: 125px;
+}
+
+table th {
+  font-weight: bold;
+}
+
+/* Delete button styles */
+.delete-button,
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #007BFF; /* Darker blue on hover */
+}
+.add-product-button {
+  background-color: #007BFF; /* Change to your desired color */
+  color: white; /* Text color */
+  border: none;
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+}
+
+.add-product-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* Style for the dropdown select */
+select {
+  width: 50%; /* Make the select dropdown full width */
+  padding: 10px; /* Add some padding */
+  margin: 10px 0; /* Space around the dropdown */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  font-size: 16px; /* Increase font size for better readability */
+  color: #333; /* Dark text color */
+  appearance: none; /* Remove default arrow for customization */
+  cursor: pointer; /* Change cursor to pointer for dropdown */
+}
+
+/* Custom dropdown arrow */
+select::after {
+  content: '▼'; /* Add a down arrow */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Disable pointer events on the arrow */
+}
+
+/* Dropdown hover state */
+select:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+/* Focused state */
+select:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #0056b3; /* Darker border when focused */
+}
+
+/* Option styles (you can optionally style options too) */
+option {
+  padding: 10px; /* Add padding to options */
+  color: #333; /* Text color for options */
+}
+#add_product_form {
+    max-width: 600px; /* Center the form */
+    margin: 20px auto; 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+#add_product_form label {
+    display: block; 
+    margin: 10px 0 5px; 
+}
+
+#add_product_form input,
+#add_product_form textarea,
+#add_product_form select {
+    width: 70%; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+#add_product_form input[type="file"] {
+    padding: 8px; 
+    cursor: pointer; 
+}
+
+#add_product_form input[type="submit"] {
+    background: #007bff; 
+    color: #fff; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+#add_product_form input[type="submit"]:hover {
+    background: #0056b3; 
+}
+
+#add_product_form p {
+    text-align: center; 
+}
+/* the styles for classes */
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.no_bottom_margin {
+  margin-bottom: 0em;	
+}
+.first_paragraph {
+  margin-top: 0;	
+}
+.last_paragraph {
+  margin-bottom: 2em;	
+}
+
+/* the styles for the div tags that divide the page into sections */
+#left_column {
+  float: left;
+  width: 150px;
+}
+#right_column {
+  float: left;
+  padding-left: 1em;
+  padding-bottom: .5em;
+  width: 330px;
+}
+#left_column p img {
+  text-align: center;
+}
+#right_column ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-top: .25em;
+}
+/* Additional styles for the Product Manager application */
+#add_edit_product_form {
+  margin: .5em 0 2em;
+}
+#add_edit_product_form label {
+  width: 8em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  text-align: right;
+  float: left;
+}
+#add_edit_product_form input {
+  float: left;
+}
+#add_edit_product_form input[text] {
+  width: 25em;
+}
+#add_edit_product_form textarea {
+  width: 25em;
+}
+#formatting_directions h2 {
+  padding-top: 1em;
+}
+#formatting_directions ul {    
+  list-style-type: disc;
+  margin-top: 0;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+#edit_button_form {
+  float: left;
+  margin-right: .5em;
+}
+.product_image_cell {
+  padding-top: 1em;
+  width: 8em;
+  text-align: center;
+}
+.product_info_cell {
+  margin: 0 0 1em;
+}
+.product_info_cell p {
+  margin: 0 0 .25em;
+}
+#category_table form {
+  margin: 0;
+}
+#category_table td {
+  margin: 0 .5em;
+}
+#add_category_form form {
+  margin: 0;
+}
+#add_category_form input {
+  margin-right: .5em;
+}
+#copyright {
+  margin: 1em 0;	
+}
+
+/* Container for product view */
+.product_view {
+  display: flex;
+  justify-content: space-between; /* Align image and product info side by side */
+  align-items: flex-start; /* Align items to the top */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Image container on the left */
+.product_view .product-image {
+  width: 40%; /* Image takes 40% of the width */
+  max-width: 300px; /* Adjust the max width of the image */
+}
+
+.product_view .product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Product details on the right */
+.product_view .product-details {
+  width: 55%; /* Product details take 55% of the width */
+  padding-left: 20px;
+}
+
+.product_view h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product_view p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Price and discount styling */
+.product_view .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f75d00;
+}
+
+.product_view .discount {
+  font-size: 16px;
+  color: #007bff;
+}
+
+.product_view .your-price {
+  font-size: 18px;
+  color: #28a745;
+  margin-top: 10px;
+}

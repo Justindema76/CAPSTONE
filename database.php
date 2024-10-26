@@ -3,18 +3,33 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+class Database {
+    private static $dsn = 'mysql:host=localhost;dbname=ShopEase';
+    private static $username = 'root';
+    private static $password = '';
+    private static $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+    private static $db;
 
-$dsn = 'mysql:host=localhost;dbname=ShopEase';
-$username = 'root'; // Your MySQL username
-$password = ''; // Your MySQL password
+    private function __construct() {}
 
-try {
-    $db = new PDO($dsn, $username, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable error reporting
-} catch (PDOException $e) {
-    $_SESSION["database_error"] = $e->getMessage();
-    $url = "database_error.php"; // Create a database error page if needed
-    header("Location: " . $url);
-    exit();
+    public static function getDB() {
+        if (!isset(self::$db)) {
+            try {
+                self::$db = new PDO(self::$dsn,
+                                    self::$username,
+                                    self::$password,
+                                    self::$options);
+            } catch (PDOException $e) {
+                self::displayError($e->getMessage());
+            }
+        }
+        return self::$db;
+    }
+    
+    public static function displayError($error_message) {
+        global $app_path;
+        include 'error.php';
+        exit();
+    }
 }
 ?>
